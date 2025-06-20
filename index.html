@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Building Blocks UI</title>
     <style>
-      /* Reset */
       * {
         margin: 0;
         padding: 0;
@@ -17,7 +16,7 @@
         background-color: #0e0e11;
         color: #fff;
         line-height: 1.6;
-        padding: 60px 20px;
+        padding: 16px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -26,23 +25,84 @@
       .heading {
         text-align: center;
         max-width: 700px;
-        margin-bottom: 50px;
+        margin-bottom: 90px;
       }
 
-      .heading h1 {
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 15px;
+      .heading span {
+        font-size: 60px;
+        line-height: 1.2;
       }
 
       .heading p {
         font-size: 16px;
+        color: #959499;
+      }
+
+      .navbar {
+        width: 100%;
+        max-width: 1250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0e0e11;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        margin-bottom: 40px;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .nav-center,
+      .nav-right {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-item {
+        position: relative;
+        cursor: pointer;
+        font-size: 14px;
+        color: #b5b5b5;
+        padding: 5px 10px;
+      }
+
+      .nav-item:hover {
+        color: #ffffff;
+      }
+
+      .popover {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1a1a1f;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 10px;
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        white-space: nowrap;
+        z-index: 999;
+      }
+
+      .nav-item:hover .popover {
+        display: flex;
+      }
+
+      .popover p {
+        margin: 0;
+        padding: 5px 10px;
+        font-size: 13px;
         color: #b5b5b5;
       }
 
-      .heading p a {
-        color: #8ab4f8;
-        text-decoration: underline;
+      .popover p:hover {
+        background-color: #2a2a2f;
+        color: #fff;
+        border-radius: 4px;
       }
 
       .main_container {
@@ -69,7 +129,7 @@
 
       .card img {
         width: 100%;
-        max-height: 250px; /* this will prevent 5th card overflow */
+        max-height: 250px;
         object-fit: contain;
         border-radius: 12px;
         margin-bottom: 20px;
@@ -92,19 +152,16 @@
         box-shadow: 0 10px 20px rgba(255, 255, 255, 0.08);
       }
 
-      /* First 3 big cards */
       .card.big {
         width: 588px;
         height: 384px;
       }
 
-      /* Smaller 2 cards */
       .card.small {
         width: 280px;
         height: 384px;
       }
 
-      /* Responsive */
       @media (max-width: 1300px) {
         .main_container {
           flex-direction: row;
@@ -122,19 +179,63 @@
     </style>
   </head>
   <body>
-    <!-- Heading -->
+    <header class="navbar">
+      <div class="logo">Logo</div>
+      <nav class="nav-center">
+        <div class="nav-item">
+          Home
+          <div class="popover">
+            <p>Sub Option 1</p>
+            <p>Sub Option 2</p>
+          </div>
+        </div>
+        <div class="nav-item">
+          About Us
+          <div class="popover">
+            <p>Our Team</p>
+            <p>Mission</p>
+          </div>
+        </div>
+        <div class="nav-item">
+          What We Do
+          <div class="popover">
+            <p>Services</p>
+            <p>Projects</p>
+          </div>
+        </div>
+      </nav>
+      <nav class="nav-right">
+        <div class="nav-item">
+          Careers
+          <div class="popover">
+            <p>Open Positions</p>
+            <p>Internships</p>
+          </div>
+        </div>
+        <div class="nav-item">
+          Connect
+          <div class="popover">
+            <p>Contact</p>
+            <p>Support</p>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <section class="heading">
-      <h1>Building blocks for collaboration</h1>
+      <span
+        >Building blocks <br />
+        for collaboration</span
+      >
       <p>
-        Add collaborative experiences you know and love like
+        Add collaborative experiences you know and love like <br />
         <a href="#">text editors</a>, <a href="#">forms</a>,
-        <a href="#">creative tools</a>, and <a href="#">whiteboards</a> with our
-        APIs and tools.
+        <a href="#">creative tools</a>, and <a href="#">whiteboards</a> <br />
+        with our APIs and tools.
       </p>
     </section>
 
     <main class="main_container">
-      <!-- First row - 3 big cards -->
       <div class="card big">
         <img src="./assets/data_science.png" alt="Data Science" />
         <h3>Data Science</h3>
@@ -156,7 +257,6 @@
         <p>Enable people to collaborate through comments.</p>
       </div>
 
-      <!-- Second row - 2 big cards -->
       <div class="card big">
         <img src="./assets/data_analytics.png" alt="Data Analytics" />
         <h3>Data Analytics</h3>
