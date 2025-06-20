@@ -176,6 +176,41 @@
           height: auto;
         }
       }
+
+      @media (max-width: 550px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+          padding: 10px 0;
+        }
+
+        .nav-center,
+        .nav-right {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          width: 100%;
+        }
+
+        .nav-item {
+          padding: 8px 12px;
+          width: 100%;
+        }
+
+        .popover {
+          position: static;
+          display: none;
+          padding-left: 15px;
+          margin-top: 5px;
+          background-color: transparent;
+          border: none;
+        }
+
+        .nav-item:hover .popover {
+          display: block;
+        }
+      }
     </style>
   </head>
   <body>
