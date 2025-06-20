@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Building Blocks UI</title>
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #0e0e11;
+        color: #fff;
+        line-height: 1.6;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .heading {
+        text-align: center;
+        max-width: 700px;
+        margin-bottom: 50px;
+      }
+
+      .heading h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .heading p {
+        font-size: 16px;
+        color: #b5b5b5;
+      }
+
+      .heading p a {
+        color: #8ab4f8;
+        text-decoration: underline;
+      }
+
+      .main_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        max-width: 1250px;
+      }
+
+      /* Card base styles */
+      .card {
+        background-color: #1a1a1f;
+        border-radius: 24px;
+        border: 1px solid #333;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .card img {
+        width: 100%;
+        max-height: 250px; /* this will prevent 5th card overflow */
+        object-fit: contain;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #f5f5f5;
+      }
+
+      .card p {
+        font-size: 14px;
+        color: #b5b5b5;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.08);
+      }
+
+      /* First 3 big cards */
+      .card.big {
+        width: 588px;
+        height: 384px;
+      }
+
+      /* Smaller 2 cards */
+      .card.small {
+        width: 280px;
+        height: 384px;
+      }
+
+      /* Responsive */
+      @media (max-width: 1300px) {
+        .main_container {
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .card.big,
+        .card.small {
+          width: 90%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Heading -->
+    <section class="heading">
+      <h1>Building blocks for collaboration</h1>
+      <p>
+        Add collaborative experiences you know and love like
+        <a href="#">text editors</a>, <a href="#">forms</a>,
+        <a href="#">creative tools</a>, and <a href="#">whiteboards</a> with our
+        APIs and tools.
+      </p>
+    </section>
+
+    <main class="main_container">
+      <!-- First row - 3 big cards -->
+      <div class="card big">
+        <img src="./assets/data_science.png" alt="Data Science" />
+        <h3>Data Science</h3>
+        <p>
+          This involves providing strategic guidance and support to
+          organisations on how to best leverage data to achieve their goals.
+        </p>
+      </div>
+
+      <div class="card small">
+        <img src="./assets/data_learning.png" alt="Data Learning" />
+        <h3>Data Learning</h3>
+        <p>Training and education to organisations on data science.</p>
+      </div>
+
+      <div class="card small">
+        <img src="./assets/bussiness.png" alt="Business Intelligence" />
+        <h3>Business Intelligence</h3>
+        <p>Enable people to collaborate through comments.</p>
+      </div>
+
+      <!-- Second row - 2 big cards -->
+      <div class="card big">
+        <img src="./assets/data_analytics.png" alt="Data Analytics" />
+        <h3>Data Analytics</h3>
+        <p>
+          Allow users to invite people and groups to their documents to
+          collaborate.
+        </p>
+      </div>
+
+      <div class="card big image">
+        <img src="./assets/data_visulaization.png" alt="Data Visualization" />
+        <h3>Data Visualization</h3>
+        <p>Add a document browsing experience to your product workspace.</p>
+      </div>
+    </main>
+  </body>
+</html>
